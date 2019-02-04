@@ -1,11 +1,17 @@
 var snake;
 var scl = 20;
-var donut;
+var apple;
 var food;
+var grass;
 
+function preload() {
+  grass = loadImage('grass.png');
+  //apple = loadImage('apple.png');
+}
+  
 
 function setup() {
-  createCanvas(600, 500)
+  createCanvas(500, 500)
   resetSketch();
   frameRate(10);
   var button = createButton("click here to reset or press R");
@@ -27,6 +33,10 @@ function pickLocation() {
 
 function draw() {
   background(150);
+  imageMode(CENTER);
+  image(grass, width/2, height/2);
+  
+  //image(apple, food.x, food.y, scl, scl);
   
   //var score = function() {
     //fill(0);
@@ -43,8 +53,8 @@ function draw() {
   
 
   //food
-  //image(donut, food.x, food.y);
-  fill(255, 0, 100);
+  //image(apple, food.x, food.y);
+  fill(255, 0, 0);
   noStroke();
   rect(food.x, food.y, scl, scl) 
 }
